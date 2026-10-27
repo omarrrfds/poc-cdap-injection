@@ -7,4 +7,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "fresh never-before-renamed workflow file"
+      - run: echo "retrigger for v2 listener test"
