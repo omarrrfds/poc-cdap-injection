@@ -1,0 +1,9 @@
+name: Clean Producer Test
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "clean test"

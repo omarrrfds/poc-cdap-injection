@@ -1,0 +1,10 @@
+name: Clean Consumer Test
+on:
+  workflow_run:
+    workflows: ['Clean Producer Test']
+    types: [completed]
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "IT FIRED -- workflow_run works for clean names on this repo/account"
